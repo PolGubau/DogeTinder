@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-
+import { useEffect, useState } from "react"
+import React from "react"
 export default function App() {
   const [allDopes, setAllDopes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -9,17 +9,17 @@ export default function App() {
     if (isLoading) {
       async function fetchData() {
         try {
-          const response = await fetch('http://shibe.online/api/shibes')
+          const response = await fetch("http://shibe.online/api/shibes")
           if (response.ok) {
             const dog = await response.json()
             setImageUrl(dog)
             setError(null)
             setIsLoading(false)
           } else {
-            setError('Hubo un error al obtener el perrito')
+            setError("Hubo un error al obtener el perrito")
           }
         } catch (error) {
-          setError('No pudimos hacer la solicitud para obtener el perrito')
+          setError("No pudimos hacer la solicitud para obtener el perrito")
         }
       }
       fetchData()
