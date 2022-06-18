@@ -20,8 +20,6 @@ module.exports = {
     eqeqeq: ["error"],
     semi: ["off", "never"],
     quotes: ["error", "double"],
-    "no-console": ["warn"],
-    "no-unused-vars": ["warn"],
     propsValidation: [0],
     scope: [0],
   },

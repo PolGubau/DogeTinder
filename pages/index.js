@@ -67,12 +67,12 @@ export default function App() {
             Dope
           </button>
           <div className="historial">
-            {allDopes.map((imgSrc, index) => (
+            {allDopes.map((imgSrc) => (
               <a href={imgSrc}>
                 <img
                   className="candidato"
                   src={imgSrc}
-                  key={index}
+                  key={imgSrc}
                   alt="Tus antiguos candidatos"
                 />
               </a>
