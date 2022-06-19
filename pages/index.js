@@ -70,7 +70,7 @@ export default function App() {
             Dope
           </button>
         </div>
-        <h3>Tus candidatos</h3>
+        {allDopes.length > 0 && <h3>Tus candidatos</h3>}
 
         <div className="historial">
           {allDopes.map((imgSrc) => (
@@ -112,10 +112,7 @@ export default function App() {
           align-items: center;
         }
         .DogeFoto {
-          width: 100%;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
+          height: 80%;
         }
         .candidato {
           background-position: center;
@@ -137,7 +134,7 @@ export default function App() {
         }
         button {
           font-size: 1.5rem;
-          min-width: 50vw;
+          min-width: 49vw;
           height: 7vh;
           border: none;
           outline: none;
