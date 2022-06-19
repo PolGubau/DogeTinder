@@ -55,11 +55,13 @@ export default function App() {
   return (
     <>
       <div className="App">
-        <img
-          className="DogeFoto"
-          src={imageUrl}
-          alt="Imagen de perrito aleatoria"
-        />
+        <section className="fotoPerro">
+          <img
+            className="DogeFoto"
+            src={imageUrl}
+            alt="Imagen de perrito aleatoria"
+          />
+        </section>
         <div className="slider">
           <button className="no" onClick={() => randomDog()}>
             Nope
@@ -67,17 +69,19 @@ export default function App() {
           <button className="yes" onClick={() => yes()}>
             Dope
           </button>
-          <div className="historial">
-            {allDopes.map((imgSrc) => (
-              <a key={imgSrc} href={imgSrc}>
-                <img
-                  className="candidato"
-                  src={imgSrc}
-                  alt="Tus antiguos candidatos"
-                />
-              </a>
-            ))}
-          </div>
+        </div>
+        <h3>Tus candidatos</h3>
+
+        <div className="historial">
+          {allDopes.map((imgSrc) => (
+            <a key={imgSrc} href={imgSrc}>
+              <img
+                className="candidato"
+                src={imgSrc}
+                alt="Tus antiguos candidatos"
+              />
+            </a>
+          ))}
         </div>
       </div>
 
@@ -85,40 +89,56 @@ export default function App() {
         .App {
           overflow: hidden;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
         }
         .historial {
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
+          width: 100vw;
+          align-content: center;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin-bottom: 7vh;
+        }
+        .fotoPerro {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
         .DogeFoto {
-          height: 90vh;
+          width: 100%;
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
         }
         .candidato {
+          background-position: center;
+          background-size: cover;
           height: 9vh;
           z-index: 2;
         }
         .slider {
-          position: absolute;
-          margin-left: auto;
-          margin-right: auto;
-          left: 0;
-          right: 0;
-          text-align: center;
-          top: 80vh;
+          position: fixed;
           width: 100%;
+          display: flex;
+          justify-items: center;
+          justify-content: center;
+          align-content: center;
+          flex-wrap: wrap;
+          flex-direction: row;
+          align-items: center;
+          bottom: 0;
         }
         button {
           font-size: 1.5rem;
-          width: 10vw;
+          min-width: 50vw;
           height: 7vh;
-          border-radius: 15px;
-          margin: 5px;
           border: none;
           outline: none;
         }
