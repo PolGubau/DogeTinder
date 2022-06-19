@@ -21,6 +21,7 @@ module.exports = {
     semi: ["off", "never"],
     quotes: ["error", "double"],
     propsValidation: [0],
+    "react/prop-types": 0,
     scope: [0],
   },
 }

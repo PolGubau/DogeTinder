@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react"
-import React from "react"
+import React, { useEffect, useState } from "react"
 export default function App() {
   const [allDopes, setAllDopes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -9,7 +8,9 @@ export default function App() {
     if (isLoading) {
       async function fetchData() {
         try {
-          const response = await fetch("http://shibe.online/api/shibes")
+          const response = await fetch(
+            "https://shibe.online/api/shibes?httpsUrls=true"
+          )
           if (response.ok) {
             const dog = await response.json()
             setImageUrl(dog)
@@ -68,11 +69,10 @@ export default function App() {
           </button>
           <div className="historial">
             {allDopes.map((imgSrc) => (
-              <a href={imgSrc}>
+              <a key={imgSrc} href={imgSrc}>
                 <img
                   className="candidato"
                   src={imgSrc}
-                  key={imgSrc}
                   alt="Tus antiguos candidatos"
                 />
               </a>
