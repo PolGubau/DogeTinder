@@ -111,9 +111,7 @@ export default function App() {
           justify-content: center;
           align-items: center;
         }
-        .DogeFoto {
-          height: 80%;
-        }
+
         .candidato {
           background-position: center;
           background-size: cover;
@@ -144,6 +142,17 @@ export default function App() {
         }
         .no {
           background-color: #ffaaaa;
+        }
+
+        .DogeFoto {
+          height: 80%;
+        }
+
+        @media (max-width: 650px) {
+          .DogeFoto {
+            width: 100%;
+            height: auto;
+          }
         }
       `}</style>
     </>
